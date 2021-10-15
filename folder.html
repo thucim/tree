@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <title>Owlctober PLG</title>
+        <style>
+            body {
+                background-color: #f9fbff;
+            }
+        </style>
+        <link rel="shortcut icon" href="cuty-owl.gif">
+    </head>
+
+    <body>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark"> 
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">上野动物园</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#a2" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="a2">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" href="#">首页</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">首鸮</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                首豹
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                              <li><a class="dropdown-item" href="#">竖琴海豹</a></li>
+                              <li><a class="dropdown-item" href="#">食蟹海豹</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#"><del>海猪（雷属性）</del></a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#">首鹅</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">首狐</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">首獭</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">首都国际机场</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">首先卸载原神</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">首尾呼应</a></li>
+                        
+                    </ul>
+                    <form class="d-flex">
+                        <input style="width: 80%;" class="form-control" type="search" placeholder="Find a Seal">
+                        <button class="btn btn-outline-primary" type="submit">Go!</button>
+                    </form>    
+                       
+                </div>
+                <!-- Button trigger modal -->
+            </div>
+        </nav>
+
+        <h2 id="welcome" style="margin-top:60px; margin-left:10px">Hello, cyber-owl!</h2>
+        <script>
+            $("#welcome").click(function(){
+                $("#owl-img").toggle()
+            })
+        </script>
+        <img id="owl-img" style="display: none; margin-left:40px" src="cuty-owl.gif" height="200px">
+
+<!-- /// -->
+        <div id="p1-panel" class="m-2" style="padding-top: 20px;">
+            >>>> General Panel 
+            <button class="btn btn-sm" style="background-color: #fa729b;"> ... </button>
+        </div>
+
+        <script>
+            $("#p1-panel").click(function(){
+                $("div#p1").toggle()
+            })
+        </script>
+
+        <div id="p1" class="m-2 ms-5 p-2" style="width: 90%; border-style:dashed; border-width: 0.5px; border-color:#dddddd">
+            <b>// Urgent things</b>
+            <p>- 明日开始尝试八小时计时... <del style="color:#aaaaaa">better arranged than "享受健康生活.doc"</del>
+            <br>- 做一个折叠表 / 作为每日打卡 / 面试进程和题目 / 必做之事列表...</p>
+        </div>
+
+<!-- /// -->
+        <div id="p2-panel" class="m-2" style="padding-top: 20px;">
+            >>>> 外部编辑panel 
+            <button id="p2-btn" class="btn btn-sm" style="background-color: #a1bee4;">load</button>
+            <button id="p2-fold" class="btn btn-sm" style="background-color: #ff97b6;"> ... </button>
+        </div>
+
+        <script>
+            $("#p2-fold").click(function(){
+                $("div#p2").toggle()
+            })
+            $(document).ready(function(){
+                htmlobj=$.ajax({url:"external.html",async:false});
+                $("#p2-txt").html(htmlobj.responseText);
+            })
+        </script>
+
+        <div id="p2" class="m-2 ms-5 p-2" style="width: 90%; border-style:dashed; border-width: 0.5px; border-color:#dddddd">
+            <div id="p2-txt">No contents yet...</div>
+        </div>
+
+    </body>    
+</html>
